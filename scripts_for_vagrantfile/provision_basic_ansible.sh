@@ -11,7 +11,7 @@
 # wget https://bootstrap.pypa.io/get-pip.py
 # sudo python get-pip.py
 # ansible-galaxy install cumulus.CumulusLinux
-# git clone 
+# git clone https://github.com/mirzawaqasahmed/vagrant-cumulus-ansible.git
 
 ###Once above packages are installed we need to built a box from it using vagrant command line.
 ###vagrant package --base [Name of a VM in virtualbox to package as a base box using "VBoxManage list vms"] --output ansible-1.9.4-w_cumulus.box
