@@ -1,0 +1,8 @@
+---
+# Playbook for configuring a dual leaf-spine setup with cumulus vx VMs
+# Mainfile
+
+- include: common.yml
+- include: all_switches.yml
+- include: clag-peer1.yml
+- include: clag-peer2.yml

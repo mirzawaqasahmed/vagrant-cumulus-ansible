@@ -1,0 +1,15 @@
+---
+# tasks file for clag-peer1
+- name: peerlink.4094 configuration for peer1 only
+  cl_interface:
+    name: "{{ item.key }}"
+    ipv4: "{{ item.value.ipv4 }}"
+    alias_name: "{{ item.value.alias_name }}"
+    clagd_enable: "{{ item.value.clagd_enable }}"
+    clagd_peer_ip: "{{ item.value.clagd_peer_ip }}"
+    clagd_priority: "{{ item.value.clagd_priority }}"
+    clagd_sys_mac: "{{ item.value.clagd_sys_mac }}"
+    clagd_args: "{{ item.value.clagd_args }}"
+  with_dict: cl_interface[inventory_hostname]
+  notify: reload networking
+  tags: clagd

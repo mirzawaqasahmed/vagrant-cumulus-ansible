@@ -1,0 +1,6 @@
+---
+# This file will take care of common system admistration setup on all hosts
+- hosts: all
+  gather_facts: no
+  roles:
+    - common

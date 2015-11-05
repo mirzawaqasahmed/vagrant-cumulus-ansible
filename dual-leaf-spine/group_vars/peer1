@@ -1,0 +1,37 @@
+cl_interface:
+    spine111:
+        peerlink.4094:
+            alias_name: "Clag_PeerLink"
+            ipv4: "169.254.1.1/30"
+            clagd_enable: "yes"
+            clagd_peer_ip: "169.254.1.2"
+            clagd_priority: "4096"
+            clagd_args: "-vm"
+            clagd_sys_mac: "00:00:00:00:00:01"
+    spine121:
+        peerlink.4094:
+            alias_name: "Clag_PeerLink"
+            ipv4: "169.254.1.1/30"
+            clagd_enable: "yes"
+            clagd_peer_ip: "169.254.1.2"
+            clagd_priority: "4096"
+            clagd_args: "-vm"
+            clagd_sys_mac: "00:00:00:00:00:02"
+    leaf131:
+        peerlink.4094:
+            alias_name: "Clag_PeerLink"
+            ipv4: "169.254.1.1/30"
+            clagd_enable: "yes"
+            clagd_peer_ip: "169.254.1.2"
+            clagd_priority: "4096"
+            clagd_args: "-vm"
+            clagd_sys_mac: "00:00:00:00:00:03"
+    leaf141:
+        peerlink.4094:
+            alias_name: "Clag_PeerLink"
+            ipv4: "169.254.1.1/30"
+            clagd_enable: "yes"
+            clagd_peer_ip: "169.254.1.2"
+            clagd_priority: "4096"
+            clagd_args: "-vm"
+            clagd_sys_mac: "00:00:00:00:00:04"

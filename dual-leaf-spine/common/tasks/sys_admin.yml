@@ -1,0 +1,4 @@
+---
+# tasks file for common
+- name: change the timezone for all devices
+  template: src=timezone.j2 dest=/etc/timezone

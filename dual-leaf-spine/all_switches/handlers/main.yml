@@ -1,0 +1,7 @@
+---
+# handlers file for roles/all_switches/handlers/main.yml
+- name: reload networking
+  service: name=networking state=reloaded
+#  command: ifreload -a
+- name: restart quagga
+  service: name=quagga state=restarted

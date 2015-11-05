@@ -1,0 +1,6 @@
+---
+# This file will take care of building peerlink.4094 on peer1 hosts only
+- hosts: peer1
+  gather_facts: no
+  roles:
+    - clag-peer1

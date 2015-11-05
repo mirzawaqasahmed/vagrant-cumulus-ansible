@@ -1,0 +1,6 @@
+---
+# This file will take care of common configuration on all_switches
+- hosts: switches
+  gather_facts: no
+  roles:
+    - all_switches
