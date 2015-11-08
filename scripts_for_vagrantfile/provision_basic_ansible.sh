@@ -14,5 +14,5 @@
 # git clone https://github.com/mirzawaqasahmed/vagrant-cumulus-ansible.git
 
 ###Once above packages are installed we need to built a box from it using vagrant command line.
-###vagrant package --base [Name of a VM in virtualbox to package as a base box using "VBoxManage list vms"] --output ansible-1.9.4-w_cumulus.box
-###vagrant box add --name ansible-1.9.4-w_cumulus ansible-1.9.4-w_cumulus.box
+###vagrant package --base Vagrant_ansible_1446291153643_39941 --output ansible-1.9.4-w_cumulus_01.box
+###vagrant box add --name ansible-1.9.4-w_cumulus_01 ansible-1.9.4-w_cumulus_01.box

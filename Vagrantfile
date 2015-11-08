@@ -320,8 +320,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	
 	# Configure out of band management interface.	
     ansible.vm.network 'private_network', ip: "10.0.0.1", virtualbox__intnet: 'netmgmt', :adapter => 4
-#	ansible.vm.provision "shell", path: "./scripts_for_vagrantfile/ssh-key-gen.sh", privileged: false
-#	ansible.vm.provision "shell", path: "./scripts_for_vagrantfile/ssh-copy-id_F.sh", privileged: false
+	ansible.vm.provision "shell", path: "./scripts_for_vagrantfile/ssh-key-gen.sh", privileged: false
+	ansible.vm.provision "shell", path: "./scripts_for_vagrantfile/ssh-copy-id_F.sh", privileged: false
 	
   end
 end
