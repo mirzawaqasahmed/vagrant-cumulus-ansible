@@ -29,12 +29,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine111.vm.network 'private_network', virtualbox__intnet: 'netmgmt', auto_config: false
 
 	# Configure rest of downlink ports towards leaf switches.
-    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L131P1P1'#, auto_config: false
-    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L132P2P1'#, auto_config: false
-    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L141P3P3'#, auto_config: false
-    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L142P4P3'#, auto_config: false
-	spine111.vm.network 'private_network', virtualbox__intnet: 'S111S112P5P5_CLAG'#, auto_config: false
-    spine111.vm.network 'private_network', virtualbox__intnet: 'S111S112P6P6_CLAG'#, auto_config: false
+    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L131P2P2'#, auto_config: false
+    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L132P3P3'#, auto_config: false
+    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L141P4P4'#, auto_config: false
+    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L142P5P4'#, auto_config: false
+	spine111.vm.network 'private_network', virtualbox__intnet: 'S111S112P6P6_CLAG'#, auto_config: false
+    spine111.vm.network 'private_network', virtualbox__intnet: 'S111S112P7P7_CLAG'#, auto_config: false
 
 	spine111.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.2/24 brd + dev swp1"
 	spine111.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -56,12 +56,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine112.vm.network 'private_network', ip: '10.0.0.3/24', virtualbox__intnet: 'netmgmt', auto_config: false
 
 	# Configure rest of downlink ports towards leaf switches.
-    spine112.vm.network 'private_network', virtualbox__intnet: 'S112L131P1P2'#, auto_config: false
+    spine112.vm.network 'private_network', virtualbox__intnet: 'S112L131P3P3'#, auto_config: false
     spine112.vm.network 'private_network', virtualbox__intnet: 'S112L132P2P2'#, auto_config: false
-    spine112.vm.network 'private_network', virtualbox__intnet: 'S112L141P3P4'#, auto_config: false
-    spine112.vm.network 'private_network', virtualbox__intnet: 'S112L142P4P4'#, auto_config: false
-	spine112.vm.network 'private_network', virtualbox__intnet: 'S111S112P5P5_CLAG'#, auto_config: false
-    spine112.vm.network 'private_network', virtualbox__intnet: 'S111S112P6P6_CLAG'#, auto_config: false
+    spine112.vm.network 'private_network', virtualbox__intnet: 'S112L141P4P5'#, auto_config: false
+    spine112.vm.network 'private_network', virtualbox__intnet: 'S112L142P5P5'#, auto_config: false
+	spine112.vm.network 'private_network', virtualbox__intnet: 'S111S112P6P6_CLAG'#, auto_config: false
+    spine112.vm.network 'private_network', virtualbox__intnet: 'S111S112P7P7_CLAG'#, auto_config: false
 	
 	spine112.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.3/24 brd + dev swp1"
 	spine112.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -83,12 +83,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine121.vm.network 'private_network', ip: '10.0.0.4/24', virtualbox__intnet: 'netmgmt', auto_config: false
 	
 	# Configure rest of downlink ports towards leaf switches.
-    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L141P1P1'#, auto_config: false
-    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L142P2P1'#, auto_config: false
-    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L131P3P3'#, auto_config: false
-    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L132P4P3'#, auto_config: false
-	spine121.vm.network 'private_network', virtualbox__intnet: 'S121S122P5P5_CLAG'#, auto_config: false
-    spine121.vm.network 'private_network', virtualbox__intnet: 'S121S122P6P6_CLAG'#, auto_config: false
+    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L141P2P2'#, auto_config: false
+    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L142P3P3'#, auto_config: false
+    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L131P4P4'#, auto_config: false
+    spine121.vm.network 'private_network', virtualbox__intnet: 'S121L132P5P4'#, auto_config: false
+	spine121.vm.network 'private_network', virtualbox__intnet: 'S121S122P6P6_CLAG'#, auto_config: false
+    spine121.vm.network 'private_network', virtualbox__intnet: 'S121S122P7P7_CLAG'#, auto_config: false
 	
 	spine121.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.4/24 brd + dev swp1"
 	spine121.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -110,12 +110,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine122.vm.network 'private_network', ip: '10.0.0.5/24', virtualbox__intnet: 'netmgmt', auto_config: false
 
 	# Configure rest of downlink ports towards leaf switches.
-	spine122.vm.network 'private_network', virtualbox__intnet: 'S122L141P1P2'#, auto_config: false
+	spine122.vm.network 'private_network', virtualbox__intnet: 'S122L141P3P3'#, auto_config: false
     spine122.vm.network 'private_network', virtualbox__intnet: 'S122L142P2P2'#, auto_config: false
-    spine122.vm.network 'private_network', virtualbox__intnet: 'S122L131P3P4'#, auto_config: false
-    spine122.vm.network 'private_network', virtualbox__intnet: 'S122L132P4P4'#, auto_config: false
-	spine122.vm.network 'private_network', virtualbox__intnet: 'S121S122P5P5_CLAG'#, auto_config: false
-    spine122.vm.network 'private_network', virtualbox__intnet: 'S121S122P6P6_CLAG'#, auto_config: false
+    spine122.vm.network 'private_network', virtualbox__intnet: 'S122L131P4P5'#, auto_config: false
+    spine122.vm.network 'private_network', virtualbox__intnet: 'S122L132P5P5'#, auto_config: false
+	spine122.vm.network 'private_network', virtualbox__intnet: 'S121S122P6P6_CLAG'#, auto_config: false
+    spine122.vm.network 'private_network', virtualbox__intnet: 'S121S122P7P7_CLAG'#, auto_config: false
 	
 	spine122.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.5/24 brd + dev swp1"
 	spine122.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -137,13 +137,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf131.vm.network 'private_network', ip: '10.0.0.6/24', virtualbox__intnet: 'netmgmt', auto_config: false
     
 	# Configure rest of the switchports for inter-switch and host communication.
-	leaf131.vm.network 'private_network', virtualbox__intnet: 'S111L131P1P1'#, auto_config: false
-    leaf131.vm.network 'private_network', virtualbox__intnet: 'S112L131P1P2'#, auto_config: false
-    leaf131.vm.network 'private_network', virtualbox__intnet: 'S121L131P3P3'#, auto_config: false
-    leaf131.vm.network 'private_network', virtualbox__intnet: 'S122L131P3P4'#, auto_config: false
-	leaf131.vm.network 'private_network', virtualbox__intnet: 'L131L132P5P5_CLAG'#, auto_config: false
-    leaf131.vm.network 'private_network', virtualbox__intnet: 'L131L132P6P6_CLAG'#, auto_config: false
-	leaf131.vm.network 'private_network', virtualbox__intnet: 'L131H1P7E1'#, auto_config: false
+	leaf131.vm.network 'private_network', virtualbox__intnet: 'S111L131P2P2'#, auto_config: false
+    leaf131.vm.network 'private_network', virtualbox__intnet: 'S112L131P3P3'#, auto_config: false
+    leaf131.vm.network 'private_network', virtualbox__intnet: 'S121L131P4P4'#, auto_config: false
+    leaf131.vm.network 'private_network', virtualbox__intnet: 'S122L131P4P5'#, auto_config: false
+	leaf131.vm.network 'private_network', virtualbox__intnet: 'L131L132P6P6_CLAG'#, auto_config: false
+    leaf131.vm.network 'private_network', virtualbox__intnet: 'L131L132P7P7_CLAG'#, auto_config: false
+	leaf131.vm.network 'private_network', virtualbox__intnet: 'L131H1P8E2'#, auto_config: false
 	
 	leaf131.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.6/24 brd + dev swp1"
 	leaf131.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -165,13 +165,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf132.vm.network 'private_network', ip: '10.0.0.7/24', virtualbox__intnet: 'netmgmt', auto_config: false
     
 	# Configure rest of the switchports for inter-switch and host communication.
-	leaf132.vm.network 'private_network', virtualbox__intnet: 'S111L132P2P1'#, auto_config: false
+	leaf132.vm.network 'private_network', virtualbox__intnet: 'S111L132P3P3'#, auto_config: false
     leaf132.vm.network 'private_network', virtualbox__intnet: 'S112L132P2P2'#, auto_config: false
-    leaf132.vm.network 'private_network', virtualbox__intnet: 'S121L132P4P3'#, auto_config: false
-    leaf132.vm.network 'private_network', virtualbox__intnet: 'S122L132P4P4'#, auto_config: false
-	leaf132.vm.network 'private_network', virtualbox__intnet: 'L131L132P5P5_CLAG'#, auto_config: false
-    leaf132.vm.network 'private_network', virtualbox__intnet: 'L131L132P6P6_CLAG'#, auto_config: false
-	leaf132.vm.network 'private_network', virtualbox__intnet: 'L132H1P7E2'#, auto_config: false
+    leaf132.vm.network 'private_network', virtualbox__intnet: 'S121L132P5P4'#, auto_config: false
+    leaf132.vm.network 'private_network', virtualbox__intnet: 'S122L132P5P5'#, auto_config: false
+	leaf132.vm.network 'private_network', virtualbox__intnet: 'L131L132P6P6_CLAG'#, auto_config: false
+    leaf132.vm.network 'private_network', virtualbox__intnet: 'L131L132P7P7_CLAG'#, auto_config: false
+	leaf132.vm.network 'private_network', virtualbox__intnet: 'L132H1P8E3'#, auto_config: false
 	
 	leaf132.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.7/24 brd + dev swp1"
 	leaf132.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -193,13 +193,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf141.vm.network 'private_network', ip: '10.0.0.8/24', virtualbox__intnet: 'netmgmt', auto_config: false
     
 	# Configure rest of the switchports for inter-switch and host communication.
-	leaf141.vm.network 'private_network', virtualbox__intnet: 'S121L141P1P1'#, auto_config: false
-    leaf141.vm.network 'private_network', virtualbox__intnet: 'S122L141P1P2'#, auto_config: false
-    leaf141.vm.network 'private_network', virtualbox__intnet: 'S111L141P3P3'#, auto_config: false
-    leaf141.vm.network 'private_network', virtualbox__intnet: 'S112L141P3P4'#, auto_config: false
-	leaf141.vm.network 'private_network', virtualbox__intnet: 'L141L142P5P5_CLAG'#, auto_config: false
-    leaf141.vm.network 'private_network', virtualbox__intnet: 'L141L142P6P6_CLAG'#, auto_config: false
-	leaf141.vm.network 'private_network', virtualbox__intnet: 'L141H2P7E1'#, auto_config: false
+	leaf141.vm.network 'private_network', virtualbox__intnet: 'S121L141P2P2'#, auto_config: false
+    leaf141.vm.network 'private_network', virtualbox__intnet: 'S122L141P3P3'#, auto_config: false
+    leaf141.vm.network 'private_network', virtualbox__intnet: 'S111L141P4P4'#, auto_config: false
+    leaf141.vm.network 'private_network', virtualbox__intnet: 'S112L141P4P5'#, auto_config: false
+	leaf141.vm.network 'private_network', virtualbox__intnet: 'L141L142P6P6_CLAG'#, auto_config: false
+    leaf141.vm.network 'private_network', virtualbox__intnet: 'L141L142P7P7_CLAG'#, auto_config: false
+	leaf141.vm.network 'private_network', virtualbox__intnet: 'L141H2P8E2'#, auto_config: false
 	
 	leaf141.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.8/24 brd + dev swp1"
 	leaf141.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -221,13 +221,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf142.vm.network 'private_network', ip: '10.0.0.9/24', virtualbox__intnet: 'netmgmt', auto_config: false
     
 	# Configure rest of the switchports for inter-switch and host communication.
-	leaf142.vm.network 'private_network', virtualbox__intnet: 'S121L142P2P1'#, auto_config: false
+	leaf142.vm.network 'private_network', virtualbox__intnet: 'S121L142P3P3'#, auto_config: false
     leaf142.vm.network 'private_network', virtualbox__intnet: 'S122L142P2P2'#, auto_config: false
-    leaf142.vm.network 'private_network', virtualbox__intnet: 'S111L142P4P3'#, auto_config: false
-    leaf142.vm.network 'private_network', virtualbox__intnet: 'S112L142P4P4'#, auto_config: false
-	leaf142.vm.network 'private_network', virtualbox__intnet: 'L141L142P5P5_CLAG'#, auto_config: false
-    leaf142.vm.network 'private_network', virtualbox__intnet: 'L141L142P6P6_CLAG'#, auto_config: false
-	leaf142.vm.network 'private_network', virtualbox__intnet: 'L142H2P7E2'#, auto_config: false
+    leaf142.vm.network 'private_network', virtualbox__intnet: 'S111L142P5P4'#, auto_config: false
+    leaf142.vm.network 'private_network', virtualbox__intnet: 'S112L142P5P5'#, auto_config: false
+	leaf142.vm.network 'private_network', virtualbox__intnet: 'L141L142P6P6_CLAG'#, auto_config: false
+    leaf142.vm.network 'private_network', virtualbox__intnet: 'L141L142P7P7_CLAG'#, auto_config: false
+	leaf142.vm.network 'private_network', virtualbox__intnet: 'L142H2P8E3'#, auto_config: false
 	
 	leaf142.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.9/24 brd + dev swp1"
 	leaf142.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
@@ -263,8 +263,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host1.vm.network 'private_network', virtualbox__intnet: 'netmgmt', :adapter => 2, auto_config: false
     
 	# Configure uplinks to leaf switches.
-	host1.vm.network 'private_network', virtualbox__intnet: 'L131H1P7E1', :adapter => 3, auto_config: false
-    host1.vm.network 'private_network', virtualbox__intnet: 'L132H1P7E2', :adapter => 4, auto_config: false
+	host1.vm.network 'private_network', virtualbox__intnet: 'L131H1P8E2', :adapter => 3, auto_config: false
+    host1.vm.network 'private_network', virtualbox__intnet: 'L132H1P8E3', :adapter => 4, auto_config: false
 
 	host1.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.10/24 brd + dev eth1"
 	host1.vm.provision :shell, :inline => "sudo ip link set dev eth1 up"
@@ -288,8 +288,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	host2.vm.provision :shell, :inline => "sudo ip link set dev eth1 up"
 		
 	# Configure uplinks to leaf switches.
-	host2.vm.network 'private_network', virtualbox__intnet: 'L141H2P7E1', :adapter => 3, auto_config: false
-    host2.vm.network 'private_network', virtualbox__intnet: 'L142H2P7E2', :adapter => 4, auto_config: false
+	host2.vm.network 'private_network', virtualbox__intnet: 'L141H2P8E2', :adapter => 3, auto_config: false
+    host2.vm.network 'private_network', virtualbox__intnet: 'L142H2P8E3', :adapter => 4, auto_config: false
 
   end
 end
