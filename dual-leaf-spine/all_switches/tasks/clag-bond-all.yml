@@ -1,10 +1,10 @@
 ---
-- name: peerlink bond configuration
+- name: clag bond configuration
   cl_bond:
     name: "{{ item.key }}"
     slaves: "{{ item.value.slaves }}"
     alias_name: "{{ item.value.alias_name|default(omit) }}"
     clag_id: "{{ item.value.clag_id }}"
-  with_dict: cl_bonds
+  with_dict: cl_bonds[inventory_hostname]
   notify: reload networking
-  tags: networking
+  tags: peerlink

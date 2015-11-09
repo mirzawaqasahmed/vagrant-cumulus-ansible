@@ -43,7 +43,7 @@ hosts_dc1
 [DC:children]
 DC_1
 
-[switches:children]
+[all_switches:children]
 spine_dc_1
 leaf_dc_1
 
@@ -58,7 +58,3 @@ spine112
 spine122
 leaf132
 leaf142
-
-[peerlink:children]
-peer1
-peer2
