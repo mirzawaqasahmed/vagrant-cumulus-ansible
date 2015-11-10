@@ -3,7 +3,6 @@
   cl_bond:
     name: "{{ item.key }}"
     slaves: "{{ item.value.slaves }}"
-    clag_id: "{{ item.value.clag_id|default(omit) }}"
     ipv4:  "{{ item.value.ipv4|default(omit) }}"
     alias_name: "{{ item.value.alias_name|default(omit) }}"
   with_dict: cl_bonds[inventory_hostname]
