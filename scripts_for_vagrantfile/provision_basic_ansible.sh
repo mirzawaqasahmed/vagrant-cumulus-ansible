@@ -14,8 +14,8 @@
 # git clone https://github.com/mirzawaqasahmed/vagrant-cumulus-ansible.git
 ###########################
 #Install netshow troubleshooting tools on all switches
-#sudo apt-get update && sudo apt-get install netshow
-#on hosts & ansible server you have to install it through PIP.
+#sudo apt-get update && sudo apt-get install python-pip && sudo apt-get install netshow
+#On hosts & ansible server you have to install it through PIP.
 #sudo pip install netshow-linux-lib
 #############################################
 
