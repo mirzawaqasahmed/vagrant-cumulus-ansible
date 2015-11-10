@@ -1,0 +1,17 @@
+---
+####This file is used to install additional tools/packages to all machines############
+######################################################################################
+# Update repositories cache
+#- apt: update_cache=yes
+#  tags: netshow
+# Install the package "python-pip"
+- apt: name=python-pip state=present
+  tags: netshow
+# Install the package "netshow"
+- apt: name=netshow state=present
+  tags: netshow
+  when: ansible_lsb.id == "Cumulus Networks"
+# Install (netshow) python package.
+- pip: name=netshow-linux-lib
+  when: ansible_lsb.id == "Ubuntu"  
+  tags: netshow
