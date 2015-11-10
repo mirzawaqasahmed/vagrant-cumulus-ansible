@@ -12,6 +12,12 @@
 # sudo python get-pip.py
 # ansible-galaxy install cumulus.CumulusLinux
 # git clone https://github.com/mirzawaqasahmed/vagrant-cumulus-ansible.git
+###########################
+#Install netshow troubleshooting tools on all switches
+#sudo apt-get update && sudo apt-get install netshow
+#on hosts & ansible server you have to install it through PIP.
+#sudo pip install netshow-linux-lib
+#############################################
 
 ###Once above packages are installed we need to built a box from it using vagrant command line.
 ###vagrant package --base Vagrant_ansible_1446291153643_39941 --output ansible-1.9.4-w_cumulus_01.box
