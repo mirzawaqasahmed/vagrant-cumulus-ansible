@@ -4,5 +4,3 @@
 
 - include: common.yml
 - include: all_switches.yml
-- include: clag-peer1.yml
-- include: clag-peer2.yml

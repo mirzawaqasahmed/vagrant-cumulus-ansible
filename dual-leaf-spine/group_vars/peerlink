@@ -1,5 +1,0 @@
-cl_bonds:
-  peerlink:
-    alias_name: 'Peerlink'
-    slaves: ['swp6', 'swp7']
-    clag_id: '1'

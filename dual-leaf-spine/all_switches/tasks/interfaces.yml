@@ -1,0 +1,10 @@
+---
+# tasks file for changing Interface settings on all switches.
+- name: Assign IP Address to Loopback interface.
+  cl_interface:
+    name: "{{ item.key }}"
+    ipv4: "{{ item.value.ipv4 }}"
+    alias_name: "{{ item.value.alias_name }}"
+  with_dict: cl_interface[inventory_hostname]
+  notify: reload networking
+  tags: loopback

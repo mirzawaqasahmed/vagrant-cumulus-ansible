@@ -2,4 +2,4 @@
 # tasks file for all_switches
 - include: interface-sourcing.yml
 - include: leaf-spine-bond.yml
-- include: clag-bond-all.yml
+- include: interfaces.yml
