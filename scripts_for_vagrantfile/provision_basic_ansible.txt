@@ -1,0 +1,76 @@
+---
+# This file will be used to build the Ansible box from base Ubuntu ubuntu/trusty64 box (vagrant init ubuntu/trusty64 & vagrant up)...
+
+# apt-get install software-properties-common
+# apt-add-repository ppa:ansible/ansible
+# apt-get update
+# apt-get install ansible
+# sudo apt-get install tree
+# sudo apt-get install expect
+# apt-get install git
+# wget https://bootstrap.pypa.io/get-pip.py
+# sudo python get-pip.py
+# ansible-galaxy install cumulus.CumulusLinux
+# git clone https://github.com/mirzawaqasahmed/vagrant-cumulus-ansible.git
+###########################
+#Install netshow troubleshooting tools on all switches
+#sudo apt-get update && sudo apt-get install python-pip && sudo apt-get install netshow
+#On hosts & ansible server you have to install it through PIP.
+#sudo pip install netshow-linux-lib
+#############################################
+
+### rm /home/vagrant/.ssh/authorized_keys
+### rm /home/vagrant/.ssh/ansible-use-ssh-key*
+### vi /home/vagrant/.ssh/id_rsa
+### vi /home/vagrant/.ssh/known_hosts
+### vi /home/vagrant/.ssh/id_rsa.pub
+### vi /home/vagrant/.ssh/config
+### rm -rf /home/vagrant/.ssh
+### sudo bash -c 'echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+### mkdir -m 0700 -p /home/vagrant/.ssh
+### curl https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub >> /home/vagrant/.ssh/authorized_keys
+
+### sudo apt-get clean
+### sudo rm -rf /tmp/*
+### sudo rm -f /var/log/wtmp /var/log/btmp
+### history -c
+### sudo shutdown -h now
+
+### Once above packages are installed we need to built a box from it using vagrant command line. Find out the vm name from "vboxmanage list vms" command.
+### vboxmanage list vms
+### vagrant package --base vagrant-cumulus-ansible_ansible_1446996792639_2598 --output ansible-1.9.4-w_cumulus_02.box
+### vagrant box add --name ansible-1.9.4-w_cumulus_02 ansible-1.9.4-w_cumulus_02.box
+### vagrant box remove ansible-1.9.4-w_cumulus_01
+### Update Vagrantfile
+### vi /home/vagrant/.ssh/config
+### update file with following contents
+Host spine111
+    HostName spine111
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host spine112
+    HostName spine112
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host spine121
+    HostName spine121
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host spine122
+    HostName spine122
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host leaf131
+    HostName leaf131
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host leaf132
+    HostName leaf132
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host leaf141
+    HostName leaf141
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host leaf142
+    HostName leaf142
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host host1
+    HostName host1
+    IdentityFile ~/.ssh/ansible-use-ssh-key
+Host host2
+    HostName host2
+    IdentityFile ~/.ssh/ansible-use-ssh-key

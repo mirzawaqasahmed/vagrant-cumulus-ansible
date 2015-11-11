@@ -403,7 +403,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 # Build Ansible provisioner machine...
   
   config.vm.define 'ansible' do |ansible|
-    ansible.vm.box = 'ansible-1.9.4-w_cumulus_01'
+    ansible.vm.box = 'ansible-1.9.4-w_cumulus_02'
     ansible.vm.hostname = 'Provisioner'
 	
     ansible.vm.provider 'virtualbox' do |vbox|
