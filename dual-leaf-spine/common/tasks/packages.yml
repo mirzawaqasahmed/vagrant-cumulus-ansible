@@ -2,8 +2,8 @@
 ####This file is used to install additional tools/packages to all machines############
 ######################################################################################
 # Update repositories cache
-#- apt: update_cache=yes
-#  tags: netshow
+- apt: update_cache=yes
+  tags: netshow
 # Install the package "python-pip"
 - apt: name=python-pip state=present
   tags: netshow

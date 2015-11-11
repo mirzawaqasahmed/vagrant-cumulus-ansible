@@ -4,4 +4,3 @@
   become_user: root
   command: echo "source /etc/network/interfaces.d/*" >> /etc/network/interfaces
   notify: reload networking
-  tags: networking
