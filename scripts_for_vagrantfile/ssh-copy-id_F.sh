@@ -1,4 +1,4 @@
-#!/usr/bin/expect -c
+#!/usr/bin/expect -f
 set timeout 10
 set f [open "hostsfile"]
 set hosts [split [read -nonewline $f] "\n"]

@@ -26,10 +26,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
 	# Configure out of band management interface.
-    spine111.vm.network 'private_network', virtualbox__intnet: 'netmgmt', auto_config: false
+    spine111.vm.network 'private_network', ip: '10.0.0.2/24', virtualbox__intnet: 'netmgmt'
 
 	# Configure rest of downlink ports towards leaf switches.
-    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L131P2P2'#, auto_config: false
+    spine111.vm.network 'private_network', virtualbox__intnet: 'S111L131P2P2'# auto_config: false
     spine111.vm.network 'private_network', virtualbox__intnet: 'S111L132P3P3'#, auto_config: false
     spine111.vm.network 'private_network', virtualbox__intnet: 'S111L141P4P4'#, auto_config: false
     spine111.vm.network 'private_network', virtualbox__intnet: 'S111L142P5P4'#, auto_config: false
@@ -46,8 +46,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 
-	spine111.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.2/24 brd + dev swp1"
-	spine111.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#	spine111.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.2/24 brd + dev swp1"
+#	spine111.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
 	spine111.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 
   end
@@ -63,7 +63,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
 	# Configure out of band management interface.
-    spine112.vm.network 'private_network', ip: '10.0.0.3/24', virtualbox__intnet: 'netmgmt', auto_config: false
+    spine112.vm.network 'private_network', ip: '10.0.0.3/24', virtualbox__intnet: 'netmgmt'
 
 	# Configure rest of downlink ports towards leaf switches.
     spine112.vm.network 'private_network', virtualbox__intnet: 'S112L131P3P3'#, auto_config: false
@@ -83,8 +83,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 	  
-    spine112.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.3/24 brd + dev swp1"
-    spine112.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#    spine112.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.3/24 brd + dev swp1"
+#    spine112.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
     spine112.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 	
   end
@@ -100,7 +100,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
 	# Configure out of band management interface.
-    spine121.vm.network 'private_network', ip: '10.0.0.4/24', virtualbox__intnet: 'netmgmt', auto_config: false
+    spine121.vm.network 'private_network', ip: '10.0.0.4/24', virtualbox__intnet: 'netmgmt'
 	
 	# Configure rest of downlink ports towards leaf switches.
     spine121.vm.network 'private_network', virtualbox__intnet: 'S121L141P2P2'#, auto_config: false
@@ -120,8 +120,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 	  	  
-	spine121.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.4/24 brd + dev swp1"
-	spine121.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#	spine121.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.4/24 brd + dev swp1"
+#	spine121.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
     spine121.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 	
   end
@@ -137,7 +137,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
 	# Configure out of band management interface.
-    spine122.vm.network 'private_network', ip: '10.0.0.5/24', virtualbox__intnet: 'netmgmt', auto_config: false
+    spine122.vm.network 'private_network', ip: '10.0.0.5/24', virtualbox__intnet: 'netmgmt'
 
 	# Configure rest of downlink ports towards leaf switches.
     spine122.vm.network 'private_network', virtualbox__intnet: 'S122L141P3P3'#, auto_config: false
@@ -157,8 +157,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 
-    spine122.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.5/24 brd + dev swp1"
-    spine122.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#    spine122.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.5/24 brd + dev swp1"
+ #   spine122.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
     spine122.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 		
   end
@@ -174,7 +174,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
     # Configure out of band management interface.
-    leaf131.vm.network 'private_network', ip: '10.0.0.6/24', virtualbox__intnet: 'netmgmt', auto_config: false
+    leaf131.vm.network 'private_network', ip: '10.0.0.6/24', virtualbox__intnet: 'netmgmt'
     
     # Configure rest of the switchports for inter-switch and host communication.
     leaf131.vm.network 'private_network', virtualbox__intnet: 'S111L131P2P2'#, auto_config: false
@@ -195,8 +195,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 
-    leaf131.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.6/24 brd + dev swp1"
-    leaf131.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#    leaf131.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.6/24 brd + dev swp1"
+#    leaf131.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
     leaf131.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 	
   end
@@ -212,7 +212,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
     # Configure out of band management interface.
-    leaf132.vm.network 'private_network', ip: '10.0.0.7/24', virtualbox__intnet: 'netmgmt', auto_config: false
+    leaf132.vm.network 'private_network', ip: '10.0.0.7/24', virtualbox__intnet: 'netmgmt'
     
     # Configure rest of the switchports for inter-switch and host communication.
     leaf132.vm.network 'private_network', virtualbox__intnet: 'S111L132P3P3'#, auto_config: false
@@ -233,8 +233,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 
-    leaf132.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.7/24 brd + dev swp1"
-    leaf132.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#    leaf132.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.7/24 brd + dev swp1"
+#    leaf132.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
     leaf132.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 	
   end
@@ -250,7 +250,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
     # Configure out of band management interface.
-    leaf141.vm.network 'private_network', ip: '10.0.0.8/24', virtualbox__intnet: 'netmgmt', auto_config: false
+    leaf141.vm.network 'private_network', ip: '10.0.0.8/24', virtualbox__intnet: 'netmgmt'
     
     # Configure rest of the switchports for inter-switch and host communication.
     leaf141.vm.network 'private_network', virtualbox__intnet: 'S121L141P2P2'#, auto_config: false
@@ -271,8 +271,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 
-    leaf141.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.8/24 brd + dev swp1"
-    leaf141.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#    leaf141.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.8/24 brd + dev swp1"
+#    leaf141.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
     leaf141.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 	
   end
@@ -288,7 +288,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
     # Configure out of band management interface.
-    leaf142.vm.network 'private_network', ip: '10.0.0.9/24', virtualbox__intnet: 'netmgmt', auto_config: false
+    leaf142.vm.network 'private_network', ip: '10.0.0.9/24', virtualbox__intnet: 'netmgmt'
     
     # Configure rest of the switchports for inter-switch and host communication.
     leaf142.vm.network 'private_network', virtualbox__intnet: 'S121L142P3P3'#, auto_config: false
@@ -309,8 +309,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
     end
 
-    leaf142.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.9/24 brd + dev swp1"
-    leaf142.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
+#   leaf142.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.9/24 brd + dev swp1"
+#   leaf142.vm.provision :shell, :inline => "sudo ip link set dev swp1 up"
     leaf142.vm.provision :shell, :inline => "sudo echo \"source /etc/network/interfaces.d/*\" >> /etc/network/interfaces"#as per CUMULUS guideline for managing interfaces using Cumulus provided ansible modules we have to source interfaces file.
 	
   end
@@ -340,7 +340,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
     # Configure out of band management interface.
-    host1.vm.network 'private_network', virtualbox__intnet: 'netmgmt', :adapter => 2, auto_config: false
+    host1.vm.network 'private_network', ip: '10.0.0.10/24', virtualbox__intnet: 'netmgmt', :adapter => 2
     
     # Configure uplinks to leaf switches.
     host1.vm.network 'private_network', virtualbox__intnet: 'L131H1P8E2', :adapter => 3, auto_config: false
@@ -352,8 +352,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
     end
 
-    host1.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.10/24 brd + dev eth1"
-    host1.vm.provision :shell, :inline => "sudo ip link set dev eth1 up"
+#    host1.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.10/24 brd + dev eth1"
+#    host1.vm.provision :shell, :inline => "sudo ip link set dev eth1 up"
 	
   end
   
@@ -368,10 +368,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Internal network for switchports interfaces.
 	
     # Configure out of band management interface.
-    host2.vm.network 'private_network', virtualbox__intnet: 'netmgmt', :adapter => 2, auto_config: false
+    host2.vm.network 'private_network', ip: '10.0.0.11/24', virtualbox__intnet: 'netmgmt', :adapter => 2#, auto_config: false
 
-    host2.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.11/24 brd + dev eth1"
-    host2.vm.provision :shell, :inline => "sudo ip link set dev eth1 up"
+#    host2.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.11/24 brd + dev eth1"
+#    host2.vm.provision :shell, :inline => "sudo ip link set dev eth1 up"
 		
     # Configure uplinks to leaf switches.
     host2.vm.network 'private_network', virtualbox__intnet: 'L141H2P8E2', :adapter => 3, auto_config: false
@@ -411,7 +411,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 	
     # Configure out of band management interface.	
-    ansible.vm.network 'private_network', ip: "10.0.0.1", virtualbox__intnet: 'netmgmt', :adapter => 4
+    ansible.vm.network 'private_network', ip: "10.0.0.1/24", virtualbox__intnet: 'netmgmt', :adapter => 4
     ansible.vm.provision "shell", path: "./scripts_for_vagrantfile/ssh-key-gen.sh", privileged: false
     ansible.vm.provision "shell", path: "./scripts_for_vagrantfile/ssh-copy-id_F.sh", privileged: false
 	

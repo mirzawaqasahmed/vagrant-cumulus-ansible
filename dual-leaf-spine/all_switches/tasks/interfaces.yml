@@ -3,8 +3,22 @@
 - name: Assign IP Address to Loopback interface.
   cl_interface:
     name: "{{ item.key }}"
-    ipv4: "{{ item.value.ipv4 }}"
-    alias_name: "{{ item.value.alias_name }}"
+    ipv4: "{{ item.value.ipv4|default(omit) }}"
+    ipv6: "{{ item.value.ipv6|default(omit) }}"
+    alias_name: "{{ item.value.alias_name|default(omit) }}"
+    addr_method: "{{ item.value.addr_method|default(omit) }}"
+    speed: "{{ item.value.link_speed|default(omit) }}"
+    mtu: "{{ item.value.mtu|default(omit) }}"
+    clagd_enable: "{{ item.value.clagd_enable|default(omit) }}"
+    clagd_peer_ip: "{{ item.value.clagd_peer_ip|default(omit) }}"
+    clagd_sys_mac: "{{ item.value.clagd_sys_mac|default(omit) }}"
+    clagd_priority: "{{ item.value.clagd_priority|default(omit) }}"
+    vids: "{{ item.value.vids|default(omit) }}"
+    virtual_ip: "{{ item.value.virtual_ip|default(omit) }}"
+    virtual_mac: "{{ item.value.virtual_mac|default(omit) }}"
+    mstpctl_portnetwork: "{{ item.value.mstpctl_portnetwork|default('no') }}"
+    mstpctl_portadminedge: "{{ item.value.mstpctl_portadminedge|default('no') }}"
+    mstpctl_bpduguard: "{{ item.value.mstpctl_bpduguard|default('no') }}"
   with_dict: cl_interface[inventory_hostname]
   notify: reload networking
   tags: loopback

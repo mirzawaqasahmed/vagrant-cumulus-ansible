@@ -3,8 +3,18 @@
   cl_bond:
     name: "{{ item.key }}"
     slaves: "{{ item.value.slaves }}"
+    clag_id: "{{ item.value.clag_id|default(omit) }}"
     ipv4:  "{{ item.value.ipv4|default(omit) }}"
+    ipv6: "{{ item.value.ipv6|default(omit) }}"
     alias_name: "{{ item.value.alias_name|default(omit) }}"
+    addr_method: "{{ item.value.addr_method|default(omit) }}"
+    mtu: "{{ item.value.mtu|default(omit) }}"
+    vids: "{{ item.value.vids|default(omit) }}"
+    virtual_ip: "{{ item.value.virtual_ip|default(omit) }}"
+    virtual_mac: "{{ item.value.virtual_mac|default(omit) }}"
+    mstpctl_portnetwork: "{{ item.value.mstpctl_portnetwork|default('no') }}"
+    mstpctl_portadminedge: "{{ item.value.mstpctl_portadminedge|default('no') }}"
+    mstpctl_bpduguard: "{{ item.value.mstpctl_bpduguard|default('no') }}"
   with_dict: cl_bonds[inventory_hostname]
   notify: reload networking
   tags: L-S-bond
