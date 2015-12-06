@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end  
   
   config.vm.define 'spine111' do |spine111|
-    spine111.vm.box = 'cumulus-vx-2.5.3'
+    spine111.vm.box = 'cumulus-vx-2.5.4'
 	spine111.vm.hostname = 'Spine-111'
 	
 	spine111.vm.provider 'virtualbox' do |vbox|
@@ -37,13 +37,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine111.vm.network 'private_network', virtualbox__intnet: 'S111S112P7P7_CLAG'#, auto_config: false
 
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 
 #	spine111.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.2/24 brd + dev swp1"
@@ -53,7 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
  
   config.vm.define 'spine112' do |spine112|
-    spine112.vm.box = 'cumulus-vx-2.5.3'
+    spine112.vm.box = 'cumulus-vx-2.5.4'
 	spine112.vm.hostname = 'Spine-112'
 	
 	spine112.vm.provider 'virtualbox' do |vbox|
@@ -74,13 +74,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine112.vm.network 'private_network', virtualbox__intnet: 'S111S112P7P7_CLAG'#, auto_config: false
 
     config.vm.provider :virtualbox do |vb|
-        vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+        vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 	  
 #    spine112.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.3/24 brd + dev swp1"
@@ -90,7 +90,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
  
   config.vm.define 'spine121' do |spine121|
-    spine121.vm.box = 'cumulus-vx-2.5.3'
+    spine121.vm.box = 'cumulus-vx-2.5.4'
     spine121.vm.hostname = 'Spine-121'
 	
     spine121.vm.provider 'virtualbox' do |vbox|
@@ -111,13 +111,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine121.vm.network 'private_network', virtualbox__intnet: 'S121S122P7P7_CLAG'#, auto_config: false
 	  
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 	  	  
 #	spine121.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.4/24 brd + dev swp1"
@@ -127,7 +127,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   config.vm.define 'spine122' do |spine122|
-    spine122.vm.box = 'cumulus-vx-2.5.3'
+    spine122.vm.box = 'cumulus-vx-2.5.4'
     spine122.vm.hostname = 'Spine-122'
 	
     spine122.vm.provider 'virtualbox' do |vbox|
@@ -148,13 +148,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     spine122.vm.network 'private_network', virtualbox__intnet: 'S121S122P7P7_CLAG'#, auto_config: false
 	
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 
 #    spine122.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.5/24 brd + dev swp1"
@@ -164,7 +164,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   config.vm.define 'leaf131' do |leaf131|
-    leaf131.vm.box = 'cumulus-vx-2.5.3'
+    leaf131.vm.box = 'cumulus-vx-2.5.4'
     leaf131.vm.hostname = 'Leaf-131'
 	
     leaf131.vm.provider 'virtualbox' do |vbox|
@@ -186,13 +186,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf131.vm.network 'private_network', virtualbox__intnet: 'L131H1P8E2'#, auto_config: false
 	
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 
 #    leaf131.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.6/24 brd + dev swp1"
@@ -202,7 +202,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   config.vm.define 'leaf132' do |leaf132|
-    leaf132.vm.box = 'cumulus-vx-2.5.3'
+    leaf132.vm.box = 'cumulus-vx-2.5.4'
     leaf132.vm.hostname = 'Leaf-132'
 	
     leaf132.vm.provider 'virtualbox' do |vbox|
@@ -224,13 +224,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf132.vm.network 'private_network', virtualbox__intnet: 'L132H1P8E3'#, auto_config: false
 	
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 
 #    leaf132.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.7/24 brd + dev swp1"
@@ -240,7 +240,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   config.vm.define 'leaf141' do |leaf141|
-    leaf141.vm.box = 'cumulus-vx-2.5.3'
+    leaf141.vm.box = 'cumulus-vx-2.5.4'
     leaf141.vm.hostname = 'Leaf-141'
 	
     leaf141.vm.provider 'virtualbox' do |vbox|
@@ -262,13 +262,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf141.vm.network 'private_network', virtualbox__intnet: 'L141H2P8E2'#, auto_config: false
 	
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 
 #    leaf141.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.8/24 brd + dev swp1"
@@ -278,7 +278,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   config.vm.define 'leaf142' do |leaf142|
-    leaf142.vm.box = 'cumulus-vx-2.5.3'
+    leaf142.vm.box = 'cumulus-vx-2.5.4'
     leaf142.vm.hostname = 'Leaf-142'
 	
     leaf142.vm.provider 'virtualbox' do |vbox|
@@ -300,13 +300,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     leaf142.vm.network 'private_network', virtualbox__intnet: 'L142H2P8E3'#, auto_config: false
 	
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc6", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc7", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc8", "allow-vms"]
     end
 
 #   leaf142.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.9/24 brd + dev swp1"
@@ -347,9 +347,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host1.vm.network 'private_network', virtualbox__intnet: 'L132H1P8E3', :adapter => 4, auto_config: false
 
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
     end
 
 #    host1.vm.provision :shell, :inline => "sudo ip addr add 10.0.0.10/24 brd + dev eth1"
@@ -378,9 +378,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host2.vm.network 'private_network', virtualbox__intnet: 'L142H2P8E3', :adapter => 4, auto_config: false
 
     config.vm.provider :virtualbox do |vb|
-	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
+	vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-vms"]
+	vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-vms"]
     end
 
   end
